@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Traits;
+use Illuminate\Support\Facades\App;
+ 
+
+
+trait PdfsTrait {
+
+  private function pdfCreateFileTrait ( $View, $DataFile ) {
+    
+   // dd($View );
+      
+      $pdf    = App::make('dompdf.wrapper');
+       
+      return  $pdf->loadView($View, $DataFile )->output();
+
+      }
+
+
+      //return \PDF::loadView(/* ... */)->download($salesinvoiceData->id.'.pdf')
+}
